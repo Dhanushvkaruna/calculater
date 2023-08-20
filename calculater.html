@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style type="text/css">
+		.calculator
+		{
+			padding: 10px;
+			border-radius: 10px;
+			height: 380px;
+			width: 400px;
+			margin: auto;
+			background-color: rgb(200, 48, 48);
+			box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 8px;
+            outline: 20px solid blue;
+		}
+
+		.display-box{
+			font-family: 'orbitron', sans-serif;
+			background-color: #eb1395;
+			border: 1px solid black;
+			border-radius: 5px;
+			height: 65%;
+			width: 98%;
+		}
+
+		#btn{
+			background-color: rgb(61, 248, 61);
+		}
+
+		input[type=button]{
+			font-family: 'orbitron', sans-serif;
+			background-color: black;
+			border: 1px solid white;
+			border-radius: 5px;
+			color: white;
+			width: 100%;
+			height: 70%;
+			outline: none;
+		}
+
+		input:active[type=button]{
+			background-color: #e5e5e5;
+			box-shadow: inset 0px 0px 5px #c1c1c1;
+		}
+		#bg-image{
+			display: block ;
+		}
+	</style>
+
+</head>
+<body>
+	<input type="image" src="https://images.pexels.com/photos/2356059/pexels-photo-2356059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width="100%" alt="">
+    <H1>BASIC calculate</H1>
+    <table class="calculator">
+        <tr>
+            <td colspan="3"> <input type="text" class="display box" id="result" disabled></td>
+            <td><input type="button" value="C" id="btn" onclick="clearScreen()"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="display('1')"></td>
+			<td><input type="button" value="2" onclick="display('2')"></td>
+			<td><input type="button" value="3" onclick="display('3')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="display('4')"></td>
+			<td><input type="button" value="5" onclick="display('5')"></td>
+			<td><input type="button" value="6" onclick="display('6')"></td>
+			
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="display('7')"></td>
+			<td><input type="button" value="8" onclick="display('8')"></td>
+			<td><input type="button" value="9" onclick="display('9')"></td>
+			
+        </tr>
+        <tr>
+            <td><input type="button" value="." onclick="display('.')"></td>
+			<td><input type="button" value="0" onclick="display('0')"></td>
+			<td><input type="button" value="=" id="btn" onclick="calculate()"></td>
+			
+        </tr>
+        <tr>
+            <td><input type="button" value="/" onclick="display('/')"></td>
+            <td><input type="button" value="-" onclick="display('-')"></td>
+            <td><input type="button" value="+" onclick="display('+')"></td>
+            <td><input type="button" value="*" onclick="display('*')"></td>
+        </tr>
+    </table>
+	<bg-image class="https://images.pexels.com/photos/2356059/pexels-photo-2356059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></bg-image>
+    <script type="text/javascript">
+		function clearScreen()
+		{
+			document.getElementById('result').value="";
+		}
+
+		function display(value)
+		{
+			document.getElementById('result').value+=value;
+		}
+
+		function calculate(value)
+		{
+			var p=document.getElementById('result').value;
+			var q=eval(p);
+			document.getElementById('result').value=q;
+		}
+	</script>
+
+</body>
+</html>
